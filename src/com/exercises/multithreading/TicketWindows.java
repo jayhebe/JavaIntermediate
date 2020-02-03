@@ -25,10 +25,26 @@ class SendTickets extends Thread
     @Override
     public void run()
     {
-        while (ticketNum > 0)
+        while (true)
         {
-            System.out.println(Thread.currentThread().getName() + ":" + ticketNum);
-            ticketNum--;
+            synchronized(SendTickets.class)
+            {
+                if (ticketNum > 0)
+                {
+                    try
+                    {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e)
+                    {
+                        e.printStackTrace();
+                    }
+                    System.out.println(Thread.currentThread().getName() + ":" + ticketNum);
+                    ticketNum--;
+                } else
+                {
+                    break;
+                }
+            }
         }
     }
 }
