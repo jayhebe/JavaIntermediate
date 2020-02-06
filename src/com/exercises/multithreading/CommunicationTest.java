@@ -7,12 +7,15 @@ public class CommunicationTest
         Number number = new Number();
         Thread t1 = new Thread(number);
         Thread t2 = new Thread(number);
+        Thread t3 = new Thread(number);
 
         t1.setName("Thread1: ");
         t2.setName("Thread2: ");
+        t3.setName("Thread3: ");
 
         t1.start();
         t2.start();
+        t3.start();
     }
 }
 
@@ -27,6 +30,8 @@ class Number implements Runnable
         {
             synchronized (this)
             {
+                notifyAll();
+
                 if (number <= 100)
                 {
                     try
