@@ -6,7 +6,7 @@ public class DateTimeTest
 {
     public static void main(String[] args)
     {
-//        test1();
+        test1();
         test2();
     }
 
@@ -20,5 +20,12 @@ public class DateTimeTest
     {
         Date date1 = new Date();
         System.out.println(date1.toString());
+        System.out.println(date1.getTime());
+
+        Date date2 = new Date(1581177234347L);
+        System.out.println(date2.toString());
+
+        java.sql.Date date3 = new java.sql.Date(1581177234347L);
+        System.out.println(date3);
     }
 }
