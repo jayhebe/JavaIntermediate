@@ -1,8 +1,8 @@
 package com.exercises.io;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileReaderWriterTest
@@ -10,7 +10,9 @@ public class FileReaderWriterTest
     public static void main(String[] args)
     {
 //        testFileReader1();
-        testFileReader2();
+//        testFileReader2();
+//        testFileWriter();
+        copyFileContent();
     }
 
     public static void testFileReader1()
@@ -83,6 +85,87 @@ public class FileReaderWriterTest
             catch (IOException e)
             {
                 e.printStackTrace();
+            }
+        }
+    }
+
+    public static void testFileWriter()
+    {
+        FileWriter fw = null;
+        try
+        {
+            File file = new File("hello.txt");
+            fw = new FileWriter(file, true);
+            fw.write("\nI will be back!");
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            if (fw != null)
+            {
+                try
+                {
+                    fw.close();
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public static void copyFileContent()
+    {
+        FileReader fr = null;
+        FileWriter fw = null;
+        File srcFile = new File("hello.txt");
+        File destFile = new File("hi.txt");
+
+        try
+        {
+            fr = new FileReader(srcFile);
+            fw = new FileWriter(destFile);
+
+            char[] content = new char[10];
+            int length;
+            while ((length = fr.read(content)) != -1)
+            {
+//                fw.write(new String(content, 0, length));
+                fw.write(content, 0, length);
+            }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            if (fw != null)
+            {
+                try
+                {
+                    fw.close();
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+
+            if (fr != null)
+            {
+                try
+                {
+                    fr.close();
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
             }
         }
     }
