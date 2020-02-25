@@ -2,10 +2,8 @@ package com.exercises.collections;
 
 import java.util.*;
 
-public class CollectionTest
-{
-    public static void main(String[] args)
-    {
+public class CollectionTest {
+    public static void main(String[] args) {
 //        test1();
 //        test2();
 //        test3();
@@ -14,8 +12,7 @@ public class CollectionTest
         test6();
     }
 
-    public static void test1()
-    {
+    public static void test1() {
         Collection collection = new ArrayList();
 
         collection.add("AA");
@@ -35,8 +32,7 @@ public class CollectionTest
         System.out.println(collection.isEmpty());
     }
 
-    public static void test2()
-    {
+    public static void test2() {
         Collection coll = new ArrayList();
         coll.add(123);
         coll.add(456);
@@ -55,8 +51,7 @@ public class CollectionTest
         System.out.println(coll.containsAll(coll1));
     }
 
-    public static void test3()
-    {
+    public static void test3() {
         Collection coll = new ArrayList();
         coll.add(123);
         coll.add(456);
@@ -76,8 +71,7 @@ public class CollectionTest
         System.out.println(coll);
     }
 
-    public static void test4()
-    {
+    public static void test4() {
         Collection coll = new ArrayList();
         coll.add(123);
         coll.add(456);
@@ -91,8 +85,7 @@ public class CollectionTest
         System.out.println(coll);
     }
 
-    public static void test5()
-    {
+    public static void test5() {
         Collection coll1 = new ArrayList();
         coll1.add(123);
         coll1.add(456);
@@ -111,8 +104,7 @@ public class CollectionTest
         System.out.println(coll1.equals(coll2));
     }
 
-    public static void test6()
-    {
+    public static void test6() {
         List<String> list = Arrays.asList("AA", "BB", "CC");
         System.out.println(list.toString());
 

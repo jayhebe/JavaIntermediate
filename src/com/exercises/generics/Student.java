@@ -1,5 +1,4 @@
 package com.exercises.generics;
 
-public class Student
-{
+public class Student {
 }

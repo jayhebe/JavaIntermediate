@@ -2,48 +2,36 @@ package com.exercises.multithreading;
 
 import java.util.concurrent.locks.ReentrantLock;
 
-class NewWindow implements Runnable
-{
+class NewWindow implements Runnable {
     private int ticket = 100;
     private ReentrantLock lock = new ReentrantLock();
 
     @Override
-    public void run()
-    {
-        while (true)
-        {
-            try
-            {
+    public void run() {
+        while (true) {
+            try {
                 lock.lock();
 
-                if (ticket > 0)
-                {
-                    try
-                    {
+                if (ticket > 0) {
+                    try {
                         Thread.sleep(100);
-                    } catch (InterruptedException e)
-                    {
+                    } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                     System.out.println(Thread.currentThread().getName() + ": sells ticket, ticket number is " + ticket);
                     ticket--;
-                } else
-                {
+                } else {
                     break;
                 }
-            }
-            finally
-            {
+            } finally {
                 lock.unlock();
             }
         }
     }
 }
 
-public class LockTest
-{
-    public static void main(String[] args)
-    {
+public class LockTest {
+    public static void main(String[] args) {
         NewWindow w = new NewWindow();
 
         Thread t1 = new Thread(w);

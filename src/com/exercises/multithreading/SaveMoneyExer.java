@@ -1,9 +1,7 @@
 package com.exercises.multithreading;
 
-public class SaveMoneyExer
-{
-    public static void main(String[] args)
-    {
+public class SaveMoneyExer {
+    public static void main(String[] args) {
         SaveMoney sm = new SaveMoney();
 
         Thread t1 = new Thread(sm);
@@ -17,24 +15,18 @@ public class SaveMoneyExer
     }
 }
 
-class SaveMoney implements Runnable
-{
+class SaveMoney implements Runnable {
     private double balance = 0;
 
     @Override
-    public void run()
-    {
-        for (int i = 0; i < 3; i++)
-        {
-            try
-            {
+    public void run() {
+        for (int i = 0; i < 3; i++) {
+            try {
                 Thread.sleep(1000);
-            } catch (InterruptedException e)
-            {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            synchronized (this)
-            {
+            synchronized (this) {
                 balance += 1000;
                 System.out.println("线程" + Thread.currentThread().getName() + "存入1000元，当前余额为：" + balance);
             }

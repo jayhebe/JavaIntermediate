@@ -2,10 +2,8 @@ package com.exercises.commonclasses;
 
 import java.time.*;
 
-public class JDK8DateTimeTest
-{
-    public static void main(String[] args)
-    {
+public class JDK8DateTimeTest {
+    public static void main(String[] args) {
 //        Date date1 = new Date(2020 - 1900, 9 - 1, 8);
 //        System.out.println(date1);
 

@@ -1,9 +1,7 @@
 package com.exercises.multithreading;
 
-public class ProductTest
-{
-    public static void main(String[] args)
-    {
+public class ProductTest {
+    public static void main(String[] args) {
         Clerk clerk = new Clerk();
 
         Producer p1 = new Producer(clerk);

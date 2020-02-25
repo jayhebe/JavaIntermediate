@@ -1,5 +1,4 @@
 package com.exercises.generics;
 
-public class Customer
-{
+public class Customer {
 }

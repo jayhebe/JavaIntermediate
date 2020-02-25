@@ -4,10 +4,8 @@ package com.exercises.commonclasses;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class CompareTest
-{
-    public static void main(String[] args)
-    {
+public class CompareTest {
+    public static void main(String[] args) {
 //        String[] arr = new String[]{"AA", "CC", "KK", "MM", "GG", "JJ", "DD"};
 //        Arrays.sort(arr);
 //        System.out.println(Arrays.toString(arr));
@@ -21,21 +19,15 @@ public class CompareTest
 
 //        Arrays.sort(arr);
 //        System.out.println(Arrays.toString(arr));
-        Arrays.sort(arr, new Comparator()
-        {
+        Arrays.sort(arr, new Comparator() {
             @Override
-            public int compare(Object o1, Object o2)
-            {
-                if (o1 instanceof Goods && o2 instanceof Goods)
-                {
-                    Goods g1 = (Goods)o1;
-                    Goods g2 = (Goods)o2;
-                    if (g1.getName().equals(g2.getName()))
-                    {
+            public int compare(Object o1, Object o2) {
+                if (o1 instanceof Goods && o2 instanceof Goods) {
+                    Goods g1 = (Goods) o1;
+                    Goods g2 = (Goods) o2;
+                    if (g1.getName().equals(g2.getName())) {
                         return -Double.compare(g1.getPrice(), g2.getPrice());
-                    }
-                    else
-                    {
+                    } else {
                         return g1.getName().compareTo(g2.getName());
                     }
                 }
@@ -48,15 +40,12 @@ public class CompareTest
         System.out.println("---------------------------------------");
 
         String[] arr2 = new String[]{"AA", "CC", "KK", "MM", "GG", "JJ", "DD"};
-        Arrays.sort(arr2, new Comparator()
-        {
+        Arrays.sort(arr2, new Comparator() {
             @Override
-            public int compare(Object o1, Object o2)
-            {
-                if (o1 instanceof String && o2 instanceof String)
-                {
-                    String s1 = (String)o1;
-                    String s2 = (String)o2;
+            public int compare(Object o1, Object o2) {
+                if (o1 instanceof String && o2 instanceof String) {
+                    String s1 = (String) o1;
+                    String s2 = (String) o2;
 
                     return -s1.compareTo(s2);
                 }

@@ -5,13 +5,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class CodeLinesCounter
-{
+public class CodeLinesCounter {
     private static int codeLines = 0;
     private static int fileCount = 0;
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         String filePath = "D:\\Java";
         String fileExtension = ".java";
         getCodeLines(filePath, fileExtension);
@@ -19,22 +17,16 @@ public class CodeLinesCounter
         System.out.println("Total lines of " + fileExtension + ": " + codeLines);
     }
 
-    public static void getCodeLines(String dirPath, String fileExtension)
-    {
+    public static void getCodeLines(String dirPath, String fileExtension) {
         File dir = new File(dirPath);
         File[] allFiles = dir.listFiles();
-        if (allFiles != null)
-        {
-            for (File file : allFiles)
-            {
+        if (allFiles != null) {
+            for (File file : allFiles) {
                 dirPath = file.getPath();
-                if (file.isDirectory())
-                {
+                if (file.isDirectory()) {
                     getCodeLines(dirPath, fileExtension);
-                } else
-                {
-                    if (dirPath.endsWith(fileExtension))
-                    {
+                } else {
+                    if (dirPath.endsWith(fileExtension)) {
                         fileCount++;
                         getLines(dirPath);
                     }
@@ -43,35 +35,24 @@ public class CodeLinesCounter
         }
     }
 
-    private static void getLines(String filePath)
-    {
+    private static void getLines(String filePath) {
         BufferedReader br = null;
 
-        try
-        {
+        try {
             System.out.println("Calculating file: " + filePath);
 
             br = new BufferedReader(new FileReader(new File(filePath)));
 
-            while (br.readLine() != null)
-            {
+            while (br.readLine() != null) {
                 codeLines++;
             }
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally
-        {
-            if (br != null)
-            {
-                try
-                {
+        } finally {
+            if (br != null) {
+                try {
                     br.close();
-                }
-                catch (IOException e)
-                {
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }

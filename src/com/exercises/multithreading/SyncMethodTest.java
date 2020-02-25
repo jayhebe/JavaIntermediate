@@ -1,9 +1,7 @@
 package com.exercises.multithreading;
 
-public class SyncMethodTest
-{
-    public static void main(String[] args)
-    {
+public class SyncMethodTest {
+    public static void main(String[] args) {
 //        Windows w = new Windows();
 //
 //        Thread t1 = new Thread(w);
@@ -31,28 +29,21 @@ public class SyncMethodTest
     }
 }
 
-class Windows implements Runnable
-{
+class Windows implements Runnable {
     private int ticketNum = 100;
 
     @Override
-    public void run()
-    {
-        while (true)
-        {
+    public void run() {
+        while (true) {
             show();
         }
     }
 
-    private synchronized void show()
-    {
-        if (ticketNum > 0)
-        {
-            try
-            {
+    private synchronized void show() {
+        if (ticketNum > 0) {
+            try {
                 Thread.sleep(100);
-            } catch (InterruptedException e)
-            {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             System.out.println(Thread.currentThread().getName() + ":" + ticketNum);
@@ -61,28 +52,21 @@ class Windows implements Runnable
     }
 }
 
-class AnotherWindow extends Thread
-{
+class AnotherWindow extends Thread {
     private static int ticketNum = 100;
 
     @Override
-    public void run()
-    {
-        while (true)
-        {
+    public void run() {
+        while (true) {
             show();
         }
     }
 
-    private static synchronized void show()
-    {
-        if (ticketNum > 0)
-        {
-            try
-            {
+    private static synchronized void show() {
+        if (ticketNum > 0) {
+            try {
                 Thread.sleep(100);
-            } catch (InterruptedException e)
-            {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             System.out.println(Thread.currentThread().getName() + ":" + ticketNum);

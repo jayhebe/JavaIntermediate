@@ -7,7 +7,6 @@ import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.CONSTRUCTOR, ElementType.METHOD})
-public @interface MyAnnotation
-{
+public @interface MyAnnotation {
     String[] value() default "hello";
 }

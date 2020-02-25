@@ -5,10 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class MapTest
-{
-    public static void main(String[] args)
-    {
+public class MapTest {
+    public static void main(String[] args) {
         Map map = new HashMap();
 
         map.put("AA", 123);
@@ -41,8 +39,7 @@ public class MapTest
 
         //Get all keys: keySet()
         Set set = map.keySet();
-        for (Object o : set)
-        {
+        for (Object o : set) {
             System.out.println(o);
         }
 
@@ -50,8 +47,7 @@ public class MapTest
 
         //Get all values: values()
         Collection values = map.values();
-        for (Object o : values)
-        {
+        for (Object o : values) {
             System.out.println(o);
         }
 
@@ -59,8 +55,7 @@ public class MapTest
 
         //Get all entries: entrySet()
         Set entrySet = map.entrySet();
-        for (Object o : entrySet)
-        {
+        for (Object o : entrySet) {
 //            System.out.println(o);
             Map.Entry entry = (Map.Entry) o;
             System.out.println(entry.getKey() + "----->" + entry.getValue());

@@ -4,15 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ListTest
-{
-    public static void main(String[] args)
-    {
+public class ListTest {
+    public static void main(String[] args) {
         test1();
     }
 
-    public static void test1()
-    {
+    public static void test1() {
         ArrayList list = new ArrayList();
         list.add(123);
         list.add(456);

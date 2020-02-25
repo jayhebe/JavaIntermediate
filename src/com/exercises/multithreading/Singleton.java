@@ -1,12 +1,11 @@
 package com.exercises.multithreading;
 
-public class Singleton
-{
+public class Singleton {
 }
 
-class Bank
-{
-    private Bank(){}
+class Bank {
+    private Bank() {
+    }
 
     private static Bank instance = null;
 
@@ -36,14 +35,10 @@ class Bank
 //    }
 
     //Way 3: more efficient
-    public static Bank getInstance()
-    {
-        if (instance == null)
-        {
-            synchronized (Bank.class)
-            {
-                if (instance == null)
-                {
+    public static Bank getInstance() {
+        if (instance == null) {
+            synchronized (Bank.class) {
+                if (instance == null) {
                     instance = new Bank();
                 }
             }

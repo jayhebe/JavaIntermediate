@@ -5,10 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class GenericTest
-{
-    public static void main(String[] args)
-    {
+public class GenericTest {
+    public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>();
 
         list.add(78);
@@ -18,8 +16,7 @@ public class GenericTest
 
 //        System.out.println(list);
 
-        for (int score : list)
-        {
+        for (int score : list) {
             System.out.println(score);
         }
 
@@ -32,16 +29,14 @@ public class GenericTest
         map.put("city", "Beijing");
 
         Set<Map.Entry<String, String>> set = map.entrySet();
-        for (Map.Entry<String, String> entry : set)
-        {
+        for (Map.Entry<String, String> entry : set) {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
 
         System.out.println("-------------------------------------");
 
         Set<String> keys = map.keySet();
-        for (String key : keys)
-        {
+        for (String key : keys) {
             System.out.println(key + ":" + map.get(key));
         }
     }

@@ -1,14 +1,11 @@
 package com.exercises.commonclasses;
 
-public class IDEADebug
-{
-    public static void main(String[] args)
-    {
+public class IDEADebug {
+    public static void main(String[] args) {
         testStringDebug();
     }
 
-    public static void testStringDebug()
-    {
+    public static void testStringDebug() {
         String str = null;
         StringBuffer sb = new StringBuffer();
         sb.append(str);

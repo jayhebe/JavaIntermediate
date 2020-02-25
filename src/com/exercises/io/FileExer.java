@@ -3,10 +3,8 @@ package com.exercises.io;
 import java.io.File;
 import java.io.IOException;
 
-public class FileExer
-{
-    public static void main(String[] args) throws IOException
-    {
+public class FileExer {
+    public static void main(String[] args) throws IOException {
         File fileDir = new File("D:\\ioexer");
         fileDir.mkdir();
 
@@ -46,25 +44,20 @@ public class FileExer
         listFiles("D:\\ioexer", ".jpg");
     }
 
-    public static boolean deleteFile(File file, String fileName)
-    {
+    public static boolean deleteFile(File file, String fileName) {
         boolean result = false;
         File delFile = new File(file, fileName);
-        if (delFile.exists())
-        {
+        if (delFile.exists()) {
             result = delFile.delete();
         }
         return result;
     }
 
-    public static void listFiles(String directory, String extension)
-    {
+    public static void listFiles(String directory, String extension) {
         File dir = new File(directory);
         String[] allFiles = dir.list();
-        for (String file : allFiles)
-        {
-            if (file.endsWith(extension))
-            {
+        for (String file : allFiles) {
+            if (file.endsWith(extension)) {
                 System.out.println(file);
             }
         }

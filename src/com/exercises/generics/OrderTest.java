@@ -1,9 +1,7 @@
 package com.exercises.generics;
 
-public class OrderTest
-{
-    public static void main(String[] args)
-    {
+public class OrderTest {
+    public static void main(String[] args) {
         Order order = new Order();
         order.setOrderT(123);
         order.setOrderT("ABC");

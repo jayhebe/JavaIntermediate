@@ -1,9 +1,7 @@
 package com.exercises.commonclasses;
 
-public class StringMethodTest
-{
-    public static void main(String[] args)
-    {
+public class StringMethodTest {
+    public static void main(String[] args) {
 //        test1();
 //        test2();
 //        test3();
@@ -14,8 +12,7 @@ public class StringMethodTest
         test8();
     }
 
-    public static void test1()
-    {
+    public static void test1() {
         String s1 = "helloworld";
         System.out.println(s1.length());
         System.out.println(s1.charAt(0));
@@ -25,8 +22,7 @@ public class StringMethodTest
         System.out.println(s1.toLowerCase());
     }
 
-    public static void test2()
-    {
+    public static void test2() {
         String s1 = "     he  llo  w or  ld   ";
         System.out.println(s1);
         System.out.println(s1.trim());
@@ -37,16 +33,14 @@ public class StringMethodTest
         System.out.println(s2.equalsIgnoreCase(s3));
     }
 
-    public static void test3()
-    {
+    public static void test3() {
         String s1 = "abc";
         String s2 = new String("abe");
         System.out.println(s1.concat("def"));
         System.out.println(s1.compareTo(s2));
     }
 
-    public static void test4()
-    {
+    public static void test4() {
         String s1 = "Avengers";
         System.out.println(s1.substring(2));
         System.out.println(s1.substring(2, 5));
@@ -58,16 +52,14 @@ public class StringMethodTest
         System.out.println(s2.startsWith("ll", 2));
     }
 
-    public static void test5()
-    {
+    public static void test5() {
         String s1 = "helloworld";
         System.out.println(s1.indexOf("lo"));
         System.out.println(s1.indexOf("lol"));
         System.out.println(s1.lastIndexOf("lol"));
     }
 
-    public static void test6()
-    {
+    public static void test6() {
         String s1 = "helloworldll";
         System.out.println(s1.replace('l', 'm'));
         System.out.println(s1.replace("ll", "jj"));
@@ -76,13 +68,11 @@ public class StringMethodTest
         System.out.println(s2.replaceAll("\\d+", ",").replaceAll("^,|,$", ""));
     }
 
-    public static void test7()
-    {
+    public static void test7() {
         String s1 = "abc123";
         char[] charArray = s1.toCharArray();
 
-        for (char c : charArray)
-        {
+        for (char c : charArray) {
             System.out.println(c);
         }
 
@@ -90,14 +80,12 @@ public class StringMethodTest
         System.out.println(new String(arr));
     }
 
-    public static void test8()
-    {
+    public static void test8() {
         String s1 = "abc123";
         char[] charArr = s1.toCharArray();
 
         String s2 = Character.toString(charArr[0]);
-        for (int i = charArr.length - 2; i > 0; i--)
-        {
+        for (int i = charArr.length - 2; i > 0; i--) {
             s2 += Character.toString(charArr[i]);
         }
         s2 += Character.toString(charArr[charArr.length - 1]);

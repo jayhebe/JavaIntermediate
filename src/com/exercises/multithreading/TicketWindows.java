@@ -1,9 +1,7 @@
 package com.exercises.multithreading;
 
-public class TicketWindows
-{
-    public static void main(String[] args)
-    {
+public class TicketWindows {
+    public static void main(String[] args) {
         SendTickets s1 = new SendTickets();
         SendTickets s2 = new SendTickets();
         SendTickets s3 = new SendTickets();
@@ -18,30 +16,22 @@ public class TicketWindows
     }
 }
 
-class SendTickets extends Thread
-{
+class SendTickets extends Thread {
     private static int ticketNum = 100;
 
     @Override
-    public void run()
-    {
-        while (true)
-        {
-            synchronized(SendTickets.class)
-            {
-                if (ticketNum > 0)
-                {
-                    try
-                    {
+    public void run() {
+        while (true) {
+            synchronized (SendTickets.class) {
+                if (ticketNum > 0) {
+                    try {
                         Thread.sleep(100);
-                    } catch (InterruptedException e)
-                    {
+                    } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                     System.out.println(Thread.currentThread().getName() + ":" + ticketNum);
                     ticketNum--;
-                } else
-                {
+                } else {
                     break;
                 }
             }

@@ -1,12 +1,10 @@
 package com.exercises.commonclasses;
 
-public class StringTest
-{
+public class StringTest {
     String str = new String("good");
-    char[] ch = { 't', 'e', 's', 't' };
+    char[] ch = {'t', 'e', 's', 't'};
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
 //        String s1 = "abc";
 //        String s2 = "abc";
 //        s1 = "hello";
@@ -63,8 +61,7 @@ public class StringTest
         System.out.println(ex.ch);
     }
 
-    public void change(String str, char ch[])
-    {
+    public void change(String str, char ch[]) {
         str = "test ok";
         ch[0] = 'b';
     }

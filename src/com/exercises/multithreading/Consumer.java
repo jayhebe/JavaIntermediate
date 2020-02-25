@@ -1,26 +1,20 @@
 package com.exercises.multithreading;
 
-public class Consumer extends Thread
-{
+public class Consumer extends Thread {
     private Clerk clerk;
 
-    public Consumer(Clerk clerk)
-    {
+    public Consumer(Clerk clerk) {
         this.clerk = clerk;
     }
 
     @Override
-    public void run()
-    {
+    public void run() {
         System.out.println(getName() + "开始消费产品......");
 
-        while (true)
-        {
-            try
-            {
+        while (true) {
+            try {
                 Thread.sleep(2000);
-            } catch (InterruptedException e)
-            {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             clerk.consumeProduct();

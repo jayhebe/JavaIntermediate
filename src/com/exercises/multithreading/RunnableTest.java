@@ -1,9 +1,7 @@
 package com.exercises.multithreading;
 
-public class RunnableTest
-{
-    public static void main(String[] args)
-    {
+public class RunnableTest {
+    public static void main(String[] args) {
         Tickets tickets = new Tickets();
 //        Tickets t2 = new Tickets();
 //        Tickets t3 = new Tickets();
@@ -22,31 +20,22 @@ public class RunnableTest
     }
 }
 
-class Tickets implements Runnable
-{
+class Tickets implements Runnable {
     private int ticketNum = 100;
 
     @Override
-    public void run()
-    {
-        while (true)
-        {
-            synchronized(this)
-            {
-                if (ticketNum > 0)
-                {
-                    try
-                    {
+    public void run() {
+        while (true) {
+            synchronized (this) {
+                if (ticketNum > 0) {
+                    try {
                         Thread.sleep(100);
-                    } catch (InterruptedException e)
-                    {
+                    } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                     System.out.println(Thread.currentThread().getName() + ":" + ticketNum);
                     ticketNum--;
-                }
-                else
-                {
+                } else {
                     break;
                 }
             }

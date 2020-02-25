@@ -3,10 +3,8 @@ package com.exercises.io;
 import java.io.File;
 import java.io.IOException;
 
-public class FileTest
-{
-    public static void main(String[] args) throws IOException
-    {
+public class FileTest {
+    public static void main(String[] args) throws IOException {
         File file1 = new File("hello.txt");
         File file2 = new File("D:\\io\\hello.txt");
         File file3 = new File("D:\\io", "io1");
@@ -85,14 +83,12 @@ public class FileTest
         File file6 = new File("D:\\io\\io1");
 
         boolean mkdir = file6.mkdir();
-        if (mkdir)
-        {
+        if (mkdir) {
             System.out.println("hehehe");
         }
 
         boolean mkdirs = file6.mkdirs();
-        if (mkdirs)
-        {
+        if (mkdirs) {
             System.out.println("hahaha");
         }
     }

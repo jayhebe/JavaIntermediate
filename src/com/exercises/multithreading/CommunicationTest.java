@@ -1,9 +1,7 @@
 package com.exercises.multithreading;
 
-public class CommunicationTest
-{
-    public static void main(String[] args)
-    {
+public class CommunicationTest {
+    public static void main(String[] args) {
         Number number = new Number();
         Thread t1 = new Thread(number);
         Thread t2 = new Thread(number);
@@ -19,41 +17,30 @@ public class CommunicationTest
     }
 }
 
-class Number implements Runnable
-{
+class Number implements Runnable {
     private int number = 1;
 
     @Override
-    public void run()
-    {
-        while (true)
-        {
-            synchronized (this)
-            {
+    public void run() {
+        while (true) {
+            synchronized (this) {
                 notifyAll();
 
-                if (number <= 100)
-                {
-                    try
-                    {
+                if (number <= 100) {
+                    try {
                         Thread.sleep(10);
-                    } catch (InterruptedException e)
-                    {
+                    } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                     System.out.println(Thread.currentThread().getName() + ":" + number);
                     number++;
 
-                    try
-                    {
+                    try {
                         wait();
-                    } catch (InterruptedException e)
-                    {
+                    } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                }
-                else
-                {
+                } else {
                     break;
                 }
             }

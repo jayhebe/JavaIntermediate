@@ -2,10 +2,8 @@ package com.exercises.collections;
 
 import java.util.HashSet;
 
-public class HashSetInterView
-{
-    public static void main(String[] args)
-    {
+public class HashSetInterView {
+    public static void main(String[] args) {
         HashSet set = new HashSet();
         People p1 = new People(1001, "AA");
         People p2 = new People(1002, "BB");

@@ -1,9 +1,7 @@
 package com.exercises.multithreading;
 
-public class ThreadMethodTest
-{
-    public static void main(String[] args)
-    {
+public class ThreadMethodTest {
+    public static void main(String[] args) {
         HelloThread h1 = new HelloThread("MyTestThread: ");
 
 //        h1.setName("MyTestThread: ");
@@ -12,20 +10,15 @@ public class ThreadMethodTest
 
         Thread.currentThread().setName("MainThread: ");
         Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
-        for (int i = 0; i < 100; i++)
-        {
-            if (i % 2 == 0)
-            {
+        for (int i = 0; i < 100; i++) {
+            if (i % 2 == 0) {
                 System.out.println(Thread.currentThread().getName() + Thread.currentThread().getPriority() + ":" + i);
             }
 
-            if (i == 20)
-            {
-                try
-                {
+            if (i == 20) {
+                try {
                     h1.join();
-                } catch (InterruptedException e)
-                {
+                } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
@@ -33,20 +26,15 @@ public class ThreadMethodTest
     }
 }
 
-class HelloThread extends Thread
-{
-    public HelloThread(String name)
-    {
+class HelloThread extends Thread {
+    public HelloThread(String name) {
         super(name);
     }
 
     @Override
-    public void run()
-    {
-        for (int i = 0; i < 100; i++)
-        {
-            if (i % 2 == 0)
-            {
+    public void run() {
+        for (int i = 0; i < 100; i++) {
+            if (i % 2 == 0) {
 //                try
 //                {
 //                    sleep(500);

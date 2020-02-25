@@ -1,5 +1,7 @@
 package com.exercises.reflection;
 
+import java.lang.annotation.ElementType;
+
 public class ReflectionTest {
     public static void main(String[] args) throws Exception {
         //Before reflection
@@ -30,7 +32,8 @@ public class ReflectionTest {
 //        Method showNation = clazz.getDeclaredMethod("showNation", String.class);
 //        showNation.setAccessible(true);
 //        showNation.invoke(p1, "China");
-        test1();
+//        test1();
+        test2();
     }
 
     public static void test1() throws ClassNotFoundException {
@@ -46,5 +49,32 @@ public class ReflectionTest {
         //Method 3
         Class clazz3 = Class.forName("com.exercises.reflection.Person");
         System.out.println(clazz3);
+
+        //Method 4
+        ClassLoader classLoader = ReflectionTest.class.getClassLoader();
+        Class clazz4 = classLoader.loadClass("com.exercises.reflection.Person");
+        System.out.println(clazz4);
+
+        System.out.println(clazz1 == clazz2);
+        System.out.println(clazz1 == clazz3);
+        System.out.println(clazz1 == clazz4);
+    }
+
+    public static void test2() {
+        Class c1 = Object.class;
+        Class c2 = Comparable.class;
+        Class c3 = String[].class;
+        Class c4 = int[][].class;
+        Class c5 = ElementType.class;
+        Class c6 = Override.class;
+        Class c7 = int.class;
+        Class c8 = void.class;
+        Class c9 = Class.class;
+
+        int[] a = new int[10];
+        int[] b = new int[100];
+        Class c10 = a.getClass();
+        Class c11 = b.getClass();
+        System.out.println(c10 == c11);
     }
 }

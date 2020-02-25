@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class CollectionsTest
-{
-    public static void main(String[] args)
-    {
+public class CollectionsTest {
+    public static void main(String[] args) {
         List list = new ArrayList();
         list.add(123);
         list.add(456);
